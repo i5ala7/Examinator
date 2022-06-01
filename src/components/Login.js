@@ -3,7 +3,29 @@ import wave from '../assets/images/wave.png'
 import Home from '../assets/images/Home.png'
 import Avatar from '../assets/images/Avatar.png'
 import'../css/login.css'
-import '../assets/styling-js/loginStyle'
+
+
+const inputs = document.querySelectorAll(".input");
+
+
+function addcl(){
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl(){
+	let parent = this.parentNode.parentNode;// eslint-disable-next-line
+	if(this.value === ""){
+		parent.classList.remove("focus");
+	}
+}
+
+
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});
+
 
 function Login() {
   return (
@@ -41,7 +63,7 @@ function Login() {
             </form>
         </div>
     </div>
-    <script type="text/javascript" src='loginStyle'></script>
+  
         
     </div>
   )
