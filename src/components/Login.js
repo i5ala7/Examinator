@@ -2,8 +2,7 @@ import React from 'react'
 import wave from '../assets/images/wave.png'
 import Home from '../assets/images/Home.png'
 import Avatar from '../assets/images/Avatar.png'
-import'../css/login.css'
-
+import '../css/login.css'
 
 const inputs = document.querySelectorAll(".input");
 
@@ -26,8 +25,15 @@ inputs.forEach(input => {
 	input.addEventListener("blur", remcl);
 });
 
+	
+
+
+
+
+
 
 function Login() {
+	
   return (
     <div>
 
@@ -39,7 +45,7 @@ function Login() {
 		<div className="login-content">
 			<form action="index.html">
 				<img alt='avatar' src={Avatar}/>
-				<h2 className="title">BIENVENUE </h2>
+				<h2 className="title">connexion </h2>
            		<div className="input-div one">
            		   <div className="i">
            		   		<i className="fas fa-user"></i>
@@ -63,10 +69,12 @@ function Login() {
             </form>
         </div>
     </div>
+	
   
         
     </div>
   )
+  
 }
 
 export default Login
