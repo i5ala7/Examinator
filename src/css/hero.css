@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+
+.hero-feed{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+
+
+}
+
+.landing-image {
+    max-height: 500px;
+    margin-right: 100px;
+}
+
+.text-aria {
+	font-family: 'Nunito Sans';
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    margin-left: 50px;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+	
+}
+
+.text-aria h1 {
+	color: #152c5b;
+	font-size: 3rem;
+	font-weight: bold;
+	line-height: 1.5;
+
+}
+
+.text-aria h1 span {
+	font-weight: 700;
+	color: #008aff;
+}
+
+.text-aria p {
+	margin-top: 20px;
+	color:#152c5b;
+	font-weight: 400;
+	line-height: 1.7;
+	line-break: auto;
+
+
+}

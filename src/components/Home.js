@@ -1,23 +1,20 @@
 import React from 'react'
-import Header from './Header';
-import '../css/landing.css'
+import '../css/home.css'
+import Nav from './Nav';
+import Hero from './Hero';
 
-
-// // import 'Link' from 'react-router-dom'
 
 
 
 function Home() {
   
   return (
-    <div className='hero' >
+    <div >
+      <Nav />
+      
+      <Hero />
+      
 
-      <Header/>
-      
-     
-  
-      
-      
     </div>
   )
 }

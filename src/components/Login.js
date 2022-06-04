@@ -35,6 +35,7 @@ inputs.forEach(input => {
 function Login() {
 	
   return (
+	  
     <div>
 
 <img className="wave" alt='wave' src={wave} />
