@@ -1,13 +1,16 @@
 const express = require('express');
-
 const cors = require('cors');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+const bodyparser = require('body-parser');
 
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT;
 
+app.use(morgan('tiny'));
+app.use(bodyparser.urlencoded({extended: true}))
 app.use(cors());
 app.use(express.json());
 
