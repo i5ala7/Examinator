@@ -12,7 +12,7 @@ function Nav() {
   
         
          
-        {/* <h2 className='logo'><span>exam</span>inator</h2> */}
+        
           
         <ul className='nav-list' >
 

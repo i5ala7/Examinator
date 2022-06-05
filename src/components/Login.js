@@ -1,38 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import wave from '../assets/images/wave.png'
 import Home from '../assets/images/Home.png'
 import Avatar from '../assets/images/Avatar.png'
 import '../css/login.css'
-
-const inputs = document.querySelectorAll(".input");
-
-
-function addcl(){
-	let parent = this.parentNode.parentNode;
-	parent.classList.add("focus");
-}
-
-function remcl(){
-	let parent = this.parentNode.parentNode;// eslint-disable-next-line
-	if(this.value === ""){
-		parent.classList.remove("focus");
-	}
-}
-
-
-inputs.forEach(input => {
-	input.addEventListener("focus", addcl);
-	input.addEventListener("blur", remcl);
-});
-
-	
-
+import '../assets/styling-js/loginStyle'
 
 
 
 
 
 function Login() {
+	const [values, setValues] = useState({
+		email:"",
+		password: "",
+	});
+
+	const handleSubmit = (e)=> {
+		e.preventDefault();
+	}
 	
   return (
 	  
@@ -44,7 +29,7 @@ function Login() {
 			<img alt='Home' src={Home}/>
 		</div>
 		<div className="login-content">
-			<form action="index.html">
+			<form onSubmit={(e)=> handleSubmit(e) } >
 				<img alt='avatar' src={Avatar}/>
 				<h2 className="title">connexion </h2>
            		<div className="input-div one">
@@ -52,8 +37,8 @@ function Login() {
            		   		<i className="fas fa-user"></i>
            		   </div>
            		   <div className="div">
-           		   		<h5>Votre email</h5>
-           		   		<input type="text" class="input"/>
+           		   		
+           		   		<input placeholder='Votre email' name='email' type="text" class="input" onChange={(e)=> setValues({...values,[e.target.name]:e.target.value})} />
            		   </div>
            		</div>
            		<div className="input-div pass">
@@ -61,13 +46,14 @@ function Login() {
            		    	<i className="fas fa-lock"></i>
            		   </div>
            		   <div className="div">
-           		    	<h5>Mot de passe </h5>
-           		    	<input type="password" className="input"/>
+           		    	
+           		    	<input placeholder='Mot de passe' name='password' type="password" className="input" onChange={(e)=> setValues({...values, [e.target.name]:e.target.value})} />
             	   </div>
             	</div>
             	
             	<input type="submit" className="btn" value="Connexion"/>
             </form>
+			
         </div>
     </div>
 	
