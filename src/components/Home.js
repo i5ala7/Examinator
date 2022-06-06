@@ -10,8 +10,8 @@ function Home() {
   
   return (
     <div >
+
       <Nav />
-      
       <Hero />
       
 

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
 
+
 require('dotenv').config();
 
 const app = express();
@@ -21,9 +22,13 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
-const usersRouter = require('./routes/users');
-app.use('/users', usersRouter);
+const userRoutes = require("./routes/users");
+const authRoutes = require("./routes/auth")
+// const authRoutes = require("./routes/auth");
+app.use("/api/users", userRoutes);
+app.use("/api/auth", authRoutes);
 
 app.listen(port, ()=>{
     console.log('server is running on port:', port);
 })
+

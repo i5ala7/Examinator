@@ -3,21 +3,39 @@ import wave from '../assets/images/wave.png'
 import Home from '../assets/images/Home.png'
 import Avatar from '../assets/images/Avatar.png'
 import '../css/login.css'
+import axios from 'axios'
 import '../assets/styling-js/loginStyle'
+// import {Link} from 'react-router-dom'
 
 
 
 
 
 function Login() {
-	const [values, setValues] = useState({
-		email:"",
-		password: "",
-	});
+	const [data, setData] = useState({ email: "", password: "" });
+	const [error, setError] = useState("");
 
-	const handleSubmit = (e)=> {
+	const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.name]: input.value });
+	};
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-	}
+		try {
+			const url = "http://localhost:5000/api/auth";
+			const { data: res } = await axios.post(url, data);
+			localStorage.setItem("token", res.data);
+			window.location = "/admin-dashboard";
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
 	
   return (
 	  
@@ -29,7 +47,7 @@ function Login() {
 			<img alt='Home' src={Home}/>
 		</div>
 		<div className="login-content">
-			<form onSubmit={(e)=> handleSubmit(e) } >
+			<form onSubmit={handleSubmit} >
 				<img alt='avatar' src={Avatar}/>
 				<h2 className="title">connexion </h2>
            		<div className="input-div one">
@@ -38,7 +56,7 @@ function Login() {
            		   </div>
            		   <div className="div">
            		   		
-           		   		<input placeholder='Votre email' name='email' type="text" class="input" onChange={(e)=> setValues({...values,[e.target.name]:e.target.value})} />
+           		   		<input placeholder='Votre email' name='email' type="text" className="input" onChange={handleChange} />
            		   </div>
            		</div>
            		<div className="input-div pass">
@@ -47,10 +65,10 @@ function Login() {
            		   </div>
            		   <div className="div">
            		    	
-           		    	<input placeholder='Mot de passe' name='password' type="password" className="input" onChange={(e)=> setValues({...values, [e.target.name]:e.target.value})} />
+           		    	<input placeholder='Mot de passe' name='password' type="password" className="input" onChange={handleChange} />
             	   </div>
             	</div>
-            	
+            	{error && <div>{error}</div>}
             	<input type="submit" className="btn" value="Connexion"/>
             </form>
 			
