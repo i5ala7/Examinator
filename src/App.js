@@ -12,6 +12,7 @@ function App() {
 
     <Router>
       <div className="app"> 
+      
 
       <Routes>
         <Route path='/' exact  element={<Home/>} />
@@ -19,6 +20,9 @@ function App() {
         <Route path='/about' element={<About/>}  />
         {user && <Route path='/admin-dashboard' element={<Admin/>}  /> }
         <Route path="/admin-dashboard" element={<Navigate replace to="/login" />} />
+        
+
+
 
       </Routes>
 
