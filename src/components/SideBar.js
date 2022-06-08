@@ -240,7 +240,7 @@ const SideBar = () => {
 
       <Item >
 
-      <Link to="/admin-dashboard/team"><img src={Team} alt="" /></Link>
+      <Link to="/admin-dashboard/add-user/"><img src={Team} alt="" /></Link>
       <Text clicked={click} >Team</Text >
 
       </Item>
@@ -252,14 +252,14 @@ const SideBar = () => {
 			<Text clicked={click} >Calender</Text >
 			</Item>
 			<Item>
-      <Link to="/projects"><img src={Projects} alt="" /></Link>
+      <Link to="/admin-dashboard/projects"><img src={Projects} alt="" /></Link>
 
 			<Text clicked={click} >Projects</Text >
 			</Item>
 
 
 			<Item >
-      <Link to="/documents"><img src={Documents} alt="" /></Link>
+      <Link to="/admin-dashboard/documents"><img src={Documents} alt="" /></Link>
 
       
 			<Text clicked={click} >Documents</Text >

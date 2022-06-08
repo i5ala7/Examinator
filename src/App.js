@@ -18,8 +18,8 @@ function App() {
         <Route path='/' exact  element={<Home/>} />
         <Route path='/login' element={<Login/>}  />
         <Route path='/about' element={<About/>}  />
-        {user && <Route path='/admin-dashboard' element={<Admin/>}  /> }
-        <Route path="/admin-dashboard" element={<Navigate replace to="/login" />} />
+        {user && <Route path='/admin-dashboard/*' element={<Admin/>}  /> }
+        <Route path="/admin-dashboard/*" element={<Navigate replace to="/login" />} />
         
 
 

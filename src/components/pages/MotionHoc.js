@@ -13,7 +13,7 @@ const MotionHoc = (Component) => {
         }}
         exit={{
           y: -500,
-          transition: { duration: 0.5, type: "spring", ease: "easeInOut" },
+          transition: { duration: .5, type: "spring", ease: "easeInOut" },
         }}
       >
         <Component />
