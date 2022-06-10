@@ -1,17 +1,16 @@
 import React, {useState} from 'react'
-import wave from '../assets/images/wave.png'
-import Home from '../assets/images/Home.png'
-import Avatar from '../assets/images/Avatar.png'
-import '../css/login.css'
+import wave from '../../assets/images/wave.png'
+import Home from '../../assets/images/Home.png'
+import Avatar from '../../assets/images/Avatar.png'
+import '../../css/login.css'
 import axios from 'axios'
-import '../assets/styling-js/loginStyle'
-// import {Link} from 'react-router-dom'
+import '../../assets/styling-js/loginStyle'
 
 
 
 
 
-function Login() {
+function LoginObserver() {
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
 
@@ -22,10 +21,10 @@ function Login() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:5000/api/auth";
+			const url = "http://localhost:5000/api/auth/observer";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/admin-dashboard";
+			window.location = "/observer-dashboard";
 		} catch (error) {
 			if (
 				error.response &&
@@ -82,4 +81,4 @@ function Login() {
   
 }
 
-export default Login
+export default LoginObserver

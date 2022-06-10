@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
-import logo from "../assets/images/logo.svg";
- import Home from "../assets/images/home-solid.svg";
- import Team from "../assets/images/social.svg";
- import Calender from "../assets/images/sceduled.svg";
- import Projects from "../assets/images/starred.svg";
- import Documents from "../assets/images/draft.svg";
- import PowerOff from "../assets/images/power-off-solid.svg";
+import logo from "../../assets/images/logo.svg";
+ import Home from "../../assets/images/home-solid.svg";
+ import Team from "../../assets/images/social.svg";
+ import Calender from "../../assets/images/sceduled.svg";
+ import Projects from "../../assets/images/starred.svg";
+ import Documents from "../../assets/images/draft.svg";
+ import PowerOff from "../../assets/images/power-off-solid.svg";
  import styled from 'styled-components'
  import {Link} from 'react-router-dom';
+ 
 
 
 const Container = styled.div`
@@ -220,6 +221,10 @@ const Name = styled.div`
 
 
 const SideBar = () => {
+  const handleLogout = () => {
+		localStorage.removeItem("token");
+		window.location.reload();
+	};
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [profileClick, setprofileClick] = useState(false);
@@ -241,7 +246,7 @@ const SideBar = () => {
       <Item >
 
       <Link to="/admin-dashboard/add-user/"><img src={Team} alt="" /></Link>
-      <Text clicked={click} >Team</Text >
+      <Text clicked={click} >Add </Text >
 
       </Item>
 
@@ -277,7 +282,7 @@ const SideBar = () => {
 			  </Name>
 
 			  <Logout>
-				<img className='pic' src={PowerOff} alt="logout" />
+				<img onClick={handleLogout} className='pic' src={PowerOff} alt="logout" />
 			  </Logout>
 		    </Details>
 		</Profile>

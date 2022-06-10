@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBar from './SideBar'
-import '../css/userPage.css'
+import '../../css/userPage.css'
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
@@ -11,6 +11,7 @@ import Documents from "./pages/Documents";
 import Projects from "./pages/Projects";
 import Profile from './pages/Profile'
 import AddUser from './pages/AddUser'
+
 
 
 const Pages = styled.div`
@@ -45,6 +46,7 @@ function Admin() {
             <Route path='documents'   element={<Documents/>} />
             <Route path='projects'   element={<Projects/>} />
             <Route path='profile'   element={<Profile/>} />
+
 
   
           </Routes>

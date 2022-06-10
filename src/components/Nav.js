@@ -17,9 +17,9 @@ function Nav() {
         <ul className='nav-list' >
 
 
-          <Link to="/login"><li className='nav-item' >student</li></Link>
-          <Link to="/login"><li className='nav-item' >Teacher</li></Link>
-          <Link to="/login"><li className='nav-item' >observer</li></Link>
+          <Link to="/login-student"><li className='nav-item' >student</li></Link>
+          <Link to="/login-teacher"><li className='nav-item' >Teacher</li></Link>
+          <Link to="/login-observer"><li className='nav-item' >observer</li></Link>
         </ul>
 
         
