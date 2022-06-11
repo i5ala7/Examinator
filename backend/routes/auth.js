@@ -9,7 +9,7 @@ router.route('/admin').post( async (req, res) => {
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const user = await User.findOne({ email: req.body.email , "role": "ADMIN"});
+		const user = await User.findOne({ email: req.body.email , role: "Admin"});
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
@@ -33,7 +33,7 @@ router.route('/teacher').post( async (req, res) => {
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const user = await User.findOne({ email: req.body.email , "role": "TEACHER"});
+		const user = await User.findOne({ email: req.body.email , role: "Teacher"});
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
@@ -58,7 +58,7 @@ router.route('/student').post( async (req, res) => {
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const user = await User.findOne({ email: req.body.email , "role": "STUDENT"});
+		const user = await User.findOne({ email: req.body.email , role: "Student"});
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
@@ -76,13 +76,13 @@ router.route('/student').post( async (req, res) => {
 	}
 });
 
-router.route('/student').post( async (req, res) => {
+router.route('/observer').post( async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 
-		const user = await User.findOne({ email: req.body.email , "role": "WATCHER"});
+		const user = await User.findOne({ email: req.body.email , role: "Observer"});
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 

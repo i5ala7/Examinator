@@ -5,12 +5,13 @@ import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import {Routes,Route} from "react-router-dom";
-// import Team from "./pages/Team";
 import Calender from "./pages/Calender";
 import Documents from "./pages/Documents";
 import Projects from "./pages/Projects";
 import Profile from './pages/Profile'
 import AddUser from './pages/AddUser'
+import Teachers from './pages/Teachers'
+import Students from './pages/Students';
 
 
 
@@ -46,6 +47,8 @@ function Admin() {
             <Route path='documents'   element={<Documents/>} />
             <Route path='projects'   element={<Projects/>} />
             <Route path='profile'   element={<Profile/>} />
+            <Route path='teachers'   element={<Teachers/>} />
+            <Route path='students'   element={<Students/>} />
 
 
   
