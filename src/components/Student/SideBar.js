@@ -238,46 +238,46 @@ const SideBar = () => {
 		</Logo>
 		<SlickBar clicked={click} >
 			<Item >
-        <Link to='/admin-dashboard/' ><img src={Home} alt="" /></Link>
+        <Link to='/student-dashboard/' ><img src={Home} alt="" /></Link>
 				
 				<Text clicked={click} >Home</Text >
 			</Item>
 
       <Item >
 
-      <Link to="/admin-dashboard/add-user/"><img src={Team} alt="" /></Link>
-      <Text clicked={click} >Add </Text >
+      <Link to="/student-dashboard/complain/"><img src={Team} alt="" /></Link>
+      <Text clicked={click} >Complain </Text >
 
       </Item>
 
       
 			
 			<Item >
-      <Link to="/admin-dashboard/calender"><img src={Calender} alt="" /></Link>
-			<Text clicked={click} >Calender</Text >
+      <Link to="/student-dashboard/planned-exams"><img src={Calender} alt="" /></Link>
+			<Text clicked={click} >Exams</Text >
 			</Item>
 			<Item>
-      <Link to="/admin-dashboard/projects"><img src={Projects} alt="" /></Link>
+      <Link to="/student-dashboard/justify-absence"><img src={Projects} alt="" /></Link>
 
-			<Text clicked={click} >Projects</Text >
+			<Text clicked={click} >Justify</Text >
 			</Item>
 
 
 			<Item >
-      <Link to="/admin-dashboard/documents"><img src={Documents} alt="" /></Link>
+      <Link to="/student-dashboard/"><img src={Documents} alt="" /></Link>
 
       
-			<Text clicked={click} >Documents</Text >
+			<Text clicked={click} >Grades</Text >
 			</Item>
       
 		</SlickBar>
 		<Profile clicked={profileClick}>
-			<img onClick={()=> handleProfileClick()} src="https://pbs.twimg.com/profile_images/1193203438265491459/aooDOvxd_400x400.jpg" alt="profile" />
+			<img onClick={()=> handleProfileClick()} src="https://static.thenounproject.com/png/2643380-200.png" alt="profile" />
 		
 		    <Details clicked={profileClick}>
 			  <Name>
-				<h4>Salah</h4>
-        <Link style={{ textDecoration: 'none', color: 'white' , fontSize: '12px', fontWeight:'normal', marginLeft:'5px'}}  to='/admin-dashboard/profile'>Profile</Link>
+				<h4>Student</h4>
+        <Link style={{ textDecoration: 'none', color: 'white' , fontSize: '12px', fontWeight:'normal', marginLeft:'5px'}}  to='/student-dashboard/profile'>Profile</Link>
 				{/* <a href="/#"> View Profile</a> */}
 			  </Name>
 

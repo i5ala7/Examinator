@@ -1,5 +1,5 @@
 import React from 'react'
-// import SideBar from './SideBar'
+import SideBar from './SideBar'
 import '../../css/userPage.css'
 // import styled from "styled-components";
 // import { AnimatePresence } from "framer-motion";
@@ -22,13 +22,13 @@ import '../../css/userPage.css'
 //    }
 //  `;
 
-function Observer() {
+function Proctor() {
   return (
     <>
-    <h1>Observer dashboard</h1>
+    
       
 
-      {/* <SideBar />
+      <SideBar />
 
         <Pages>
           <AnimatePresence exitBeforeEnter>
@@ -52,7 +52,7 @@ function Observer() {
 
 
       
-       */}
+       
 
       
      
@@ -60,4 +60,4 @@ function Observer() {
   )
 }
 
-export default Observer
+export default Proctor

@@ -7,9 +7,9 @@ import Teacher from './components/Teacher/Teacher';
 import LoginAdmin from './components/Admin/LoginAdmin';
 import LoginStudent from './components/Student/LoginStudent';
 import LoginTeacher from './components/Teacher/LoginTeacher';
-import LoginObserver from './components/Observer/LoginObserver';
-import Observer from './components/Observer/Observer'
-
+// import LoginObserver from './components/Observer/LoginObserver';
+// import Observer from './components/Observer/Observer'
+import Verify from './components/Admin/Verify';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <Route path='/login-admin' element={<LoginAdmin/>}  />
         <Route path='/login-teacher' element={<LoginTeacher/>}  />
         <Route path='/login-student' element={<LoginStudent/>}  />
-        <Route path='/login-observer' element={<LoginObserver/>}  />
+        {/* <Route path='/login-observer' element={<LoginObserver/>}  /> */}
         <Route path='/about' element={<About/>}/>
 
         {user && <Route path='/admin-dashboard/*' element={<Admin/>}  /> }
@@ -37,8 +37,10 @@ function App() {
         {user && <Route path='/teacher-dashboard/*' element={<Teacher/>}  /> }
         <Route path="/teacher-dashboard/*" element={<Navigate replace to="/login-teacher" />} />
 
-        {user && <Route path='/observer-dashboard/*' element={<Observer/>}  /> }
-        <Route path="/observer-dashboard/*" element={<Navigate replace to="/login-observer" />} />
+        {user && <Route path='/verify/*' element={<Verify/>}  /> }
+
+        {/* {user && <Route path='/observer-dashboard/*' element={<Observer/>}  /> }
+        <Route path="/observer-dashboard/*" element={<Navigate replace to="/login-observer" />} /> */}
 
 
         

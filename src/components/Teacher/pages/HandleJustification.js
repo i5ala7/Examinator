@@ -7,7 +7,7 @@ const HandleComplainComponent = () => {
   const [data, setData] = useState([])
 
   useEffect(()=>{
-    const url = 'http://localhost:5000/api/complain/'
+    const url = 'http://localhost:5000/api/justify/'
     axios.get(url)
     .then(res => {
       console.log(res.data)
@@ -24,7 +24,7 @@ const HandleComplainComponent = () => {
       <td>{index +1}</td>
       <td>{data.firstName}</td>
       <td>{data.lastName}</td>
-      <td>{data.complain}</td>
+      <td>{data.justification}</td>
       
       <td className="buttons">
           <a className="button" href="#/"><i className="fas fa-pencil-alt"></i></a>
@@ -48,7 +48,7 @@ const HandleComplainComponent = () => {
             
             <form action=""> 
             <div className="title">
-            <h2 >Complains</h2>
+            <h2 >Justification</h2>
 
             </div>
             
@@ -60,7 +60,7 @@ const HandleComplainComponent = () => {
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Complain</th>
+                        <th>Justification</th>
                         
                         <th>Action</th>
 
@@ -89,7 +89,7 @@ const HandleComplainComponent = () => {
     );
   };
   
-  const HandleComplain = MotionHoc(HandleComplainComponent);
+  const HandleJustification = MotionHoc(HandleComplainComponent);
   
-  export default HandleComplain;
+  export default HandleJustification;
   

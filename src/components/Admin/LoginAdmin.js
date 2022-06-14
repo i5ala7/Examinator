@@ -24,7 +24,7 @@ function LoginAdmin() {
 			const url = "http://localhost:5000/api/auth/admin";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/admin-dashboard";
+			window.location = "/verify";
 		} catch (error) {
 			if (
 				error.response &&

@@ -253,21 +253,27 @@ const SideBar = () => {
       
 			
 			<Item >
-      <Link to="/admin-dashboard/calender"><img src={Calender} alt="" /></Link>
-			<Text clicked={click} >Calender</Text >
+      <Link to="/admin-dashboard/plan-exam"><img src={Calender} alt="" /></Link>
+			<Text clicked={click} >Plan</Text >
 			</Item>
 			<Item>
-      <Link to="/admin-dashboard/projects"><img src={Projects} alt="" /></Link>
+      <Link to="/admin-dashboard/teachers"><img src={Projects} alt="" /></Link>
 
-			<Text clicked={click} >Projects</Text >
+			<Text clicked={click} >Teachers</Text >
+			</Item>
+
+      <Item>
+      <Link to="/admin-dashboard/students"><img src={Projects} alt="" /></Link>
+
+			<Text clicked={click} >Students</Text >
 			</Item>
 
 
 			<Item >
-      <Link to="/admin-dashboard/documents"><img src={Documents} alt="" /></Link>
+      <Link to="/admin-dashboard/planned-exam"><img src={Documents} alt="" /></Link>
 
       
-			<Text clicked={click} >Documents</Text >
+			<Text clicked={click} >Planned</Text >
 			</Item>
       
 		</SlickBar>

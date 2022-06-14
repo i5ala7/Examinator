@@ -3,11 +3,11 @@ import '../../../css/questions-list.css'
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 
-const HandleComplainComponent = () => {
+const QuestionsComponent = () => {
   const [data, setData] = useState([])
 
   useEffect(()=>{
-    const url = 'http://localhost:5000/api/complain/'
+    const url = 'http://localhost:5000/api/questions/'
     axios.get(url)
     .then(res => {
       console.log(res.data)
@@ -16,15 +16,15 @@ const HandleComplainComponent = () => {
 
   },[])
 
-  const com = data.map ((data, index) => {
+  const ques = data.map ((data, index) => {
     return (
       
                       
       <tr key={index}>
       <td>{index +1}</td>
-      <td>{data.firstName}</td>
-      <td>{data.lastName}</td>
-      <td>{data.complain}</td>
+      <td>{data.id}</td>
+      <td>{data.subject}</td>
+      <td>{data.question}</td>
       
       <td className="buttons">
           <a className="button" href="#/"><i className="fas fa-pencil-alt"></i></a>
@@ -48,7 +48,7 @@ const HandleComplainComponent = () => {
             
             <form action=""> 
             <div className="title">
-            <h2 >Complains</h2>
+            <h2 >Questions</h2>
 
             </div>
             
@@ -57,10 +57,10 @@ const HandleComplainComponent = () => {
 
                       
                           
+                        <th>Num</th>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Complain</th>
+                        <th>Subject</th>
+                        <th>Question</th>
                         
                         <th>Action</th>
 
@@ -70,7 +70,7 @@ const HandleComplainComponent = () => {
 
                     <tbody>
 
-                      {com}
+                      {ques}
                     </tbody>
         
                    
@@ -89,7 +89,7 @@ const HandleComplainComponent = () => {
     );
   };
   
-  const HandleComplain = MotionHoc(HandleComplainComponent);
+  const Questions = MotionHoc(QuestionsComponent);
   
-  export default HandleComplain;
+  export default Questions;
   

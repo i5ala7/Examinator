@@ -19,7 +19,9 @@ function Nav() {
 
           <Link to="/login-student"><li className='nav-item' >student</li></Link>
           <Link to="/login-teacher"><li className='nav-item' >Teacher</li></Link>
-          <Link to="/login-observer"><li className='nav-item' >observer</li></Link>
+          <Link to="/login-observer"><li className='nav-item' >proctor</li></Link>
+          <Link to="/login-admin"><li className='nav-item admin-btn' >admin</li></Link>
+         
         </ul>
 
         

@@ -1,13 +1,13 @@
 import MotionHoc from "./MotionHoc";
-import '../../../css/questions-list.css'
+import '../../../css/usersList.css'
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 
-const HandleComplainComponent = () => {
+const ExamsComponent = () => {
   const [data, setData] = useState([])
 
   useEffect(()=>{
-    const url = 'http://localhost:5000/api/complain/'
+    const url = 'http://localhost:5000/api/plan/'
     axios.get(url)
     .then(res => {
       console.log(res.data)
@@ -16,16 +16,16 @@ const HandleComplainComponent = () => {
 
   },[])
 
-  const com = data.map ((data, index) => {
+  const exm = data.map ((data, index) => {
     return (
       
                       
       <tr key={index}>
       <td>{index +1}</td>
-      <td>{data.firstName}</td>
-      <td>{data.lastName}</td>
-      <td>{data.complain}</td>
-      
+      <td>{data.subject}</td>
+      <td>{data.description}</td>
+      <td>{data.duration}</td>
+      <td>{data.date}</td>
       <td className="buttons">
           <a className="button" href="#/"><i className="fas fa-pencil-alt"></i></a>
           <a className="delete" href="#/" ><i className="fas fa-times"></i></a>
@@ -48,7 +48,7 @@ const HandleComplainComponent = () => {
             
             <form action=""> 
             <div className="title">
-            <h2 >Complains</h2>
+            <h2 >Planned Exams</h2>
 
             </div>
             
@@ -58,10 +58,10 @@ const HandleComplainComponent = () => {
                       
                           
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Complain</th>
-                        
+                        <th>Subject</th>
+                        <th>Description</th>
+                        <th>Duration</th>
+                        <th>Date</th>
                         <th>Action</th>
 
           
@@ -70,7 +70,7 @@ const HandleComplainComponent = () => {
 
                     <tbody>
 
-                      {com}
+                      {exm}
                     </tbody>
         
                    
@@ -89,7 +89,7 @@ const HandleComplainComponent = () => {
     );
   };
   
-  const HandleComplain = MotionHoc(HandleComplainComponent);
+  const Exams = MotionHoc(ExamsComponent);
   
-  export default HandleComplain;
+  export default Exams;
   

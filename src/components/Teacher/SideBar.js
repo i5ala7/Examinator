@@ -238,14 +238,14 @@ const SideBar = () => {
 		</Logo>
 		<SlickBar clicked={click} >
 			<Item >
-        <Link to='/admin-dashboard/' ><img src={Home} alt="" /></Link>
+        <Link to='/teacher-dashboard/' ><img src={Home} alt="" /></Link>
 				
 				<Text clicked={click} >Home</Text >
 			</Item>
 
       <Item >
 
-      <Link to="/admin-dashboard/add-user/"><img src={Team} alt="" /></Link>
+      <Link to="/teacher-dashboard/add-question/"><img src={Team} alt="" /></Link>
       <Text clicked={click} >Add </Text >
 
       </Item>
@@ -253,31 +253,38 @@ const SideBar = () => {
       
 			
 			<Item >
-      <Link to="/admin-dashboard/calender"><img src={Calender} alt="" /></Link>
-			<Text clicked={click} >Calender</Text >
+      <Link to="/teacher-dashboard/planned"><img src={Calender} alt="" /></Link>
+			<Text clicked={click} >Planned</Text >
 			</Item>
 			<Item>
-      <Link to="/admin-dashboard/projects"><img src={Projects} alt="" /></Link>
+      <Link to="/teacher-dashboard/justification"><img src={Projects} alt="" /></Link>
 
-			<Text clicked={click} >Projects</Text >
+			<Text clicked={click} >justification</Text >
 			</Item>
 
 
 			<Item >
-      <Link to="/admin-dashboard/documents"><img src={Documents} alt="" /></Link>
+      <Link to="/teacher-dashboard/question"><img src={Documents} alt="" /></Link>
 
       
-			<Text clicked={click} >Documents</Text >
+			<Text clicked={click} >Questions</Text >
+			</Item>
+
+      <Item >
+      <Link to="/teacher-dashboard/complains"><img src={Documents} alt="" /></Link>
+
+      
+			<Text clicked={click} >Complains</Text >
 			</Item>
       
 		</SlickBar>
 		<Profile clicked={profileClick}>
-			<img onClick={()=> handleProfileClick()} src="https://pbs.twimg.com/profile_images/1193203438265491459/aooDOvxd_400x400.jpg" alt="profile" />
+			<img onClick={()=> handleProfileClick()} src="https://cdn3.iconfinder.com/data/icons/avatar-93/140/avatar__girl__teacher__female__women-512.png" alt="profile" />
 		
 		    <Details clicked={profileClick}>
 			  <Name>
-				<h4>Salah</h4>
-        <Link style={{ textDecoration: 'none', color: 'white' , fontSize: '12px', fontWeight:'normal', marginLeft:'5px'}}  to='/admin-dashboard/profile'>Profile</Link>
+				<h4>Teacher</h4>
+        <Link style={{ textDecoration: 'none', color: 'white' , fontSize: '12px', fontWeight:'normal', marginLeft:'5px'}}  to='/teacher-dashboard/profile'>Profile</Link>
 				{/* <a href="/#"> View Profile</a> */}
 			  </Name>
 
